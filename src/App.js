@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ContentList from './components/ContentList';
+import InsertItemInput from './components/InsertItemInput';
+import './stylesheet/App.css';
 
 function App() {
+
+  const [ arrayList, setArrayList ] = React.useState([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div className='App__cardBox'>
+
+        <InsertItemInput {...{arrayList, setArrayList}}/>
+
+        <ContentList {...{arrayList, setArrayList}}/>
+
+      </div>
+
     </div>
   );
 }
